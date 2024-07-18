@@ -20,6 +20,12 @@ module tb();
 	initial begin
 		$monitor("a: %0d at time : %0t",a, $time);
 	end
+//to dump the simulation file
+	initial begin
+		$dumpfile("out/dump.vcd");
+		$dumpvars;
+	end
+
 //to finish execution
 	initial begin
 		#200
