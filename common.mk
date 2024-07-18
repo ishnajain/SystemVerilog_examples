@@ -4,6 +4,7 @@ VC_FLAGS	:= -g2012
 SRC	:= .
 OUT	:= out
 EX	:= $(OUT)/test
+DUMP	:= $(OUT)/dump.vcd
 V_FILES	:= $(wildcard $(SRC)/*.sv)
 
 default	: $(EX)
@@ -17,6 +18,7 @@ $(EX)	: $(V_FILES)| $$(@D)/
 
 run : $(EX) | 
 	vvp $(EX)
+	gtkwave $(DUMP) 
 
 clean :
 	rm -rf $(OUT)
