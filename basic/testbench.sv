@@ -7,8 +7,10 @@ module tb();
 	reg rst;
 //set the values of global signal clk and reset
 	initial begin
-		clk = 1'b0;
+		clk = 1'b1;
 		rst = 1'b0;
+		#60
+		rst = 1'b1;
 	end
 //random signal for data/control
 	initial begin
